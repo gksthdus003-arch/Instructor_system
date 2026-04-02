@@ -1,5 +1,0 @@
-
-> instructor-management-webapp@1.0.0 start:server
-> node ./server/index.js
-
-^C^C
