@@ -1,0 +1,23 @@
+{
+  "name": "instructor-management-webapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Instructor management app with backend email delivery API",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "start:server": "node ./server/index.js",
+    "check:backend": "node --check ./server/index.js && node --check ./server/create-app.js && node --check ./server/config.js && node --check ./server/routes/email-routes.js && node --check ./server/routes/upload-routes.js && node --check ./server/services/mailer.js && node --check ./server/services/dispatch-import-parser.js && node --check ./server/services/instructor-import-parser.js && node --check ./server/storage/email-log-store.js && node --check ./server/storage/receipt-store.js",
+    "check:frontend": "node --check ./app.state.js && node --check ./app.dashboard.js && node --check ./app.instructors.js && node --check ./app.schedule.js && node --check ./app.settlement.js && node --check ./app.admin.js && node --check ./app.bootstrap.js",
+    "check": "npm run check:backend && npm run check:frontend"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "archiver-zip-encrypted": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.15.2",
+    "xlsx": "^0.18.5"
+  }
+}
